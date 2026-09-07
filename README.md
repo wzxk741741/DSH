@@ -147,24 +147,9 @@ dsh-whale-persona/
 │   ├── smoke.mjs            # 宿主逻辑冒烟测试
 │   └── client-smoke.mjs     # 浏览器环境模拟冒烟测试（含 hooks 边界回归防线）
 ├── .github/workflows/ci.yml # CI：push/PR 自动跑 npm test
-├── CHANGELOG.md / LICENSE / README.md
+├── CHANGELOG.md / LICENSE / README.md / CONTRIBUTING.md
 ```
 
-## 上传到 GitHub
-
-1. 在 GitHub 新建空仓库（不要勾选 README/.gitignore，避免冲突）；
-2. 按 GitHub 页面提示执行（或直接照下面做）：
-
-```bash
-cd dsh-whale-persona
-git remote add origin https://github.com/<你的用户名>/dsh-whale-persona.git
-git branch -M main
-git push -u origin main
-```
-
-3. push 后 GitHub Actions 会自动跑测试；给别人安装时用「从 GitHub 安装」一节的
-   clone + `dsh plugin add` 即可（注意告知对方：`dsh plugin add` 用绝对路径，
-   新增插件包需要重启 DSH）。
 
 ## 已知边界（诚实说明）
 
