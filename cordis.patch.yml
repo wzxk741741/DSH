@@ -1,0 +1,5 @@
+# 性格插件：一个 host-plane 行（服务端人设注入 + /api 路由），
+# 客户端半边由 package.json 的 dsh.client 声明（lib/client.js）。
+- insert:
+    - id: whale-persona
+      name: '@dsh-external/dsh-whale-persona'
