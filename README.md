@@ -35,11 +35,18 @@
 
 ## 安装 / 更新
 
+> `dsh plugin add` 要求用**绝对路径**（相对路径按 dsh 命令的调用目录解析，容易踩坑）。
+> 下面的 `<路径>` 换成你机器上的实际位置，插件放在哪个盘、哪个目录都可以。
+
 ### 本地目录（开发者）
 
 ```bash
-# 绝对路径注册（本地 link，不依赖 npm registry）
-dsh plugin --profile web add D:/DSH/dsh-whale-persona
+# Windows 示例（把路径换成你的实际目录）：
+dsh plugin --profile web add C:\projects\dsh-whale-persona
+
+# macOS / Linux 示例：
+dsh plugin --profile web add /home/you/dsh-whale-persona
+
 dsh plugin --profile web list          # 确认包已注册
 dsh --profile web --dump-config        # 确认 whale-persona entry 已组合
 ```
@@ -47,8 +54,10 @@ dsh --profile web --dump-config        # 确认 whale-persona entry 已组合
 ### 从 GitHub 安装
 
 ```bash
-git clone https://github.com/<你的用户名>/dsh-whale-persona.git
-dsh plugin --profile web add <clone 绝对路径>
+git clone https://github.com/wzxk741741/DSH.git dsh-whale-persona
+# 上面命令里的 dsh-whale-persona 是克隆到本地的文件夹名（可随意改），
+# add 时填这个文件夹的绝对路径（Windows 斜杠方向都可以）：
+dsh plugin --profile web add <clone 目录的绝对路径>/dsh-whale-persona
 # 后续更新：cd 到 clone 目录执行 git pull，再重启 DSH
 ```
 
